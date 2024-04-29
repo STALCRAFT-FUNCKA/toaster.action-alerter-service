@@ -17,34 +17,34 @@ class AlertHandler(ABCHandler):
             alert_type = event.get("alert_type")
             if alert_type == "command":
                 message_text = (
-                    f"{self._tag(event, 'user')} вызвал команду "
-                    f"/\"{event.get('command_name')}\""
-                    f"Беседа: {event.get('peer_name')}"
+                    f"{self._tag(event, 'user')} вызвал команду. \n"
+                    f"Команда: /\"{event.get('command_name')}\" \n"
+                    f"Беседа: {event.get('peer_name')} \n"
                 )
 
             elif alert_type == "warn":
                 message_text = (
-                    f"{self._tag(event, 'user')} был предупрежден."
-                    f"Инициатор: {self._tag(event, 'moderator')}"
-                    f"Получено предупреждений: {event.get('wanrs')}"
-                    f"Всего предупреждений: {event.get('total_warns')}"
-                    f"Беседа: {event.get('peer_name')}"
+                    f"{self._tag(event, 'user')} был предупрежден. \n"
+                    f"Инициатор: {self._tag(event, 'moderator')} \n"
+                    f"Получено предупреждений: {event.get('wanrs')} \n"
+                    f"Всего предупреждений: {event.get('total_warns')} \n"
+                    f"Беседа: {event.get('peer_name')} \n"
                 )
 
             elif alert_type == "unwarn":
                 message_text = (
-                    f"{self._tag(event, 'user')} был амнистирован."
-                    f"Инициатор: {self._tag(event, 'moderator')}"
-                    f"Снято предупреждений: {event.get('wanrs')}"
-                    f"Всего предупреждений: {event.get('total_warns')}"
-                    f"Беседа: {event.get('peer_name')}"
+                    f"{self._tag(event, 'user')} был амнистирован.\n"
+                    f"Инициатор: {self._tag(event, 'moderator')} \n"
+                    f"Снято предупреждений: {event.get('wanrs')}\n"
+                    f"Всего предупреждений: {event.get('total_warns')} \n"
+                    f"Беседа: {event.get('peer_name')} \n"
                 )
 
             elif alert_type == "kick":
                 message_text = (
-                    f"{self._tag(event, 'user')} итсключен из беседы"
-                    f"Инициатор: {self._tag(event, 'moderator')}"
-                    f"Беседа: {event.get('peer_name')}"
+                    f"{self._tag(event, 'user')} итсключен из беседы. \n"
+                    f"Инициатор: {self._tag(event, 'moderator')} \n"
+                    f"Беседа: {event.get('peer_name')} \n"
                 )
 
             self.api.messages.send(
