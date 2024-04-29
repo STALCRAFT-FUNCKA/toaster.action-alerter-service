@@ -18,7 +18,7 @@ class AlertHandler(ABCHandler):
             if alert_type == "command":
                 message_text = (
                     f"{self._tag(event, 'user')} вызвал команду. \n"
-                    f"Команда: /\"{event.get('command_name')}\" \n"
+                    f"Команда: /{event.get('command_name')} \n"
                     f"Беседа: {event.get('peer_name')} \n"
                 )
 
@@ -51,7 +51,7 @@ class AlertHandler(ABCHandler):
                 peer_ids=log_chats,
                 random_id=0,
                 message=message_text,
-                forward=event.get("forward"),
+                forward_messages=event.get("forward"),
             )
             log_text = "Alert sent."
             await logger.info(log_text)
