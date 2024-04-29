@@ -13,7 +13,6 @@ from .config import (
     MY_SQL_PORT,
     MY_SQL_PSWD,
     MY_SQL_USER,
-    PERMISSIONS_DECODING,
 )
 
 
