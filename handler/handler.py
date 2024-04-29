@@ -76,7 +76,7 @@ class AlertHandler(ABCHandler):
         entity_name = entity + "_name"
         entity_id = entity + "_id"
 
-        return f"[{event.get(entity_id)}|{event.get(entity_name)}]"
+        return f"[id{event.get(entity_id)}|{event.get(entity_name)}]"
 
 
 alert_handler = AlertHandler()
