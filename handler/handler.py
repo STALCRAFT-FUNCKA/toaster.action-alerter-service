@@ -51,10 +51,7 @@ class AlertHandler(ABCHandler):
                 peer_ids=log_chats,
                 random_id=0,
                 message=message_text,
-                forward={
-                    "peer_id": event.get("peer_id"),
-                    "conversation_message_ids": event.get("forward"),
-                },
+                forward=event.get("forward"),
             )
             log_text = "Alert sent."
             await logger.info(log_text)
