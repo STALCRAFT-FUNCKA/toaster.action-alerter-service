@@ -4,7 +4,7 @@ from db import db
 from .abc import ABCHandler
 
 
-class ButtonHandler(ABCHandler):
+class AlertHandler(ABCHandler):
     """Event handler class that recognizes commands
     in the message and executing attached to each command
     actions.
@@ -79,4 +79,4 @@ class ButtonHandler(ABCHandler):
         return f"[{event.get(entity_id)}|{event.get(entity_name)}]"
 
 
-button_handler = ButtonHandler()
+alert_handler = AlertHandler()

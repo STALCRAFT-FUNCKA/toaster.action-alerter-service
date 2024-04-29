@@ -1,6 +1,6 @@
 """_summary_"""
 
-from .handler import button_handler
+from .handler import alert_handler
 
 
-__all__ = ("button_handler",)
+__all__ = ("alert_handler",)
