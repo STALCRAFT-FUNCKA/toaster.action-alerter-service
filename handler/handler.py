@@ -57,7 +57,9 @@ class AlertHandler(ABCHandler):
             await logger.info(log_text)
             return True
 
-        except VkApiError:
+        except VkApiError as error:
+            log_text = f"Alert sending error: {error}"
+            await logger.info(log_text)
             return False
 
     @staticmethod
