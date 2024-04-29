@@ -26,7 +26,7 @@ class AlertHandler(ABCHandler):
                 message_text = (
                     f"{self._tag(event, 'user')} был предупрежден. \n"
                     f"Инициатор: {self._tag(event, 'moderator')} \n"
-                    f"Получено предупреждений: {event.get('wanrs')} \n"
+                    f"Получено предупреждений: {event.get('warns')} \n"
                     f"Всего предупреждений: {event.get('total_warns')} \n"
                     f"Беседа: {event.get('peer_name')} \n"
                 )
@@ -35,7 +35,7 @@ class AlertHandler(ABCHandler):
                 message_text = (
                     f"{self._tag(event, 'user')} был амнистирован.\n"
                     f"Инициатор: {self._tag(event, 'moderator')} \n"
-                    f"Снято предупреждений: {event.get('wanrs')}\n"
+                    f"Снято предупреждений: {event.get('warns')}\n"
                     f"Всего предупреждений: {event.get('total_warns')} \n"
                     f"Беседа: {event.get('peer_name')} \n"
                 )
